@@ -1,7 +1,20 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Draggable Marker and Latitude Longitude</title>
+    <script>
+        window.onload=function(){
+            <?php if (isset($_SESSION['username'])): ?>
+                alert("Hello <?php echo $_SESSION['username']; ?>");
+                // Unset the session variable to avoid showing the alert again on refresh
+                <?php unset($_SESSION['username']); ?>
+            <?php endif; ?>
+        };
+    </script>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="style1.css">
 </head>

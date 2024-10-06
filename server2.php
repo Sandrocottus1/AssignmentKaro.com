@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($user) {
             $_SESSION['id'] = $user['id'];
-            header("Location: location.php");
+            $_SESSION['username']=$username1;
+            header("Location: dashboard.php");
             exit();
         } else {
             echo "Invalid username or password.";

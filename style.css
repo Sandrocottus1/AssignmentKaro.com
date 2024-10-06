@@ -13,14 +13,13 @@
     position: absolute;  /* Changed from fixed to relative */
     width: 100%;         /* Make the image take up the full container width */
     max-width: 627px;  
-    top: 20%;      /* Auto height to maintain aspect ratio */
+    top: 30%;      /* Auto height to maintain aspect ratio */
     right: 5%;
     object-fit: cover;   /* Ensures the image covers the space while preserving aspect ratio */
     flex-shrink: 0;
     background: lightgray 50% / cover no-repeat;   
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-    margin: 0 10px;      /* Optional margin to add some spacing */
-    top: 10%;            /* Adjust vertical positioning */
+    margin: 0 10px;            /* Adjust vertical positioning */
 }
 
 
@@ -464,4 +463,5 @@ section #footnotes{
     .img1{
         flex-direction: column;
     }
+    
 }

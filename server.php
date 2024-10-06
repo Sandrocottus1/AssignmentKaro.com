@@ -13,7 +13,8 @@
             values(?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username1, $email1, $password_11, $password_22);
         $stmt->execute();
-        echo "registration successfull!!";
+        $_SESSION['username']=$username1;
+        header("Location: location.php");
         $stmt->close();
         $conn->close();
     }
