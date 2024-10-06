@@ -1,21 +1,29 @@
-@import url("Poppins-Regular.ttf");
-
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
     font-family: 'Poppins',Poppins;
 }
-.img1{
-    width: 627px;
-    height: 363px;
-    flex-shrink: 0;
-    background: lightgray 50% / cover no-repeat;
-    top:190px;
-    left:813px;
-    position: absolute;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
+.img1 {
+    position: absolute;  /* Changed from fixed to relative */
+    width: 100%;         /* Make the image take up the full container width */
+    max-width: 627px;  
+    top: 20%;      /* Auto height to maintain aspect ratio */
+    right: 5%;
+    object-fit: cover;   /* Ensures the image covers the space while preserving aspect ratio */
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;   
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 10px;      /* Optional margin to add some spacing */
+    top: 10%;            /* Adjust vertical positioning */
+}
+
+
 .img2{
     width: 627px;
     height: 363px;
@@ -25,6 +33,16 @@
     left:5%;
     position: absolute;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.img3{
+    position: absolute;
+    top:200%;
+    right: 5%;
+    height: 363px;
+    width: 627px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
 }
 .p{
     position: absolute;
@@ -41,16 +59,30 @@
     color: #394867;   
 }
 
-.p,.p1,.head1,.img2,.head,.img1{
+.p,.p1,.head1,.img2,.head,.img1,.img3,.head3,.p2,#faq-section{
     animation: fade linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 40% cover 50%;
+}
+footer {
+    background-color: #212A3E;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    height: 140px;
+    position: absolute;
+    bottom: -320vh;
+    width: 100%;
+    margin-inline: 5px;
 }
 @keyframes fade {
-    from{
+    0%{
         opacity: 0;
     }
-    to{
+    50%{
+        opacity: 1;
+    }
+    100%{
         opacity: 2;
     }
 }
@@ -58,7 +90,7 @@
     color: #212A3E;
     position: absolute;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Poppins;
+    font-family: "Poppins";
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
@@ -69,6 +101,7 @@
     left: 2%;
     top: 30%;
 }
+
 .head1{
     width: 400px;
 height: 200;
@@ -78,10 +111,25 @@ color: #212A3E;
 font-family: Poppins;
 font-size: 40px;
 font-style: normal;
-font-weight: 100;
+font-weight: 500;
 line-height: normal;
 top: 120%;
 right: 15%;
+}
+.head3{
+    color: #212A3E;
+    position: absolute;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140.625%;
+    width: 600px;
+    height: 160.457px;
+    flex-shrink: 0;
+    left: 2%;
+    top: 200%;
 }
 .p1{
     position: absolute;
@@ -97,7 +145,20 @@ right: 15%;
     top: 140%;
     color: #394867;
 }
-
+.p2{
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140.625%; /* 50.625px */
+    width: 600px;
+    height: 263.224px;
+    flex-shrink: 0;
+    left: 2%;
+    top: 220%;
+    color: #394867;
+}
 .logo1{
     color: white;
     text-decoration: none;
@@ -106,24 +167,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200vh;
+    min-height: 400vh;
     background : #F1F6F9;
     background-size: cover;
     background-position: center;
 }
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    height: 50px; /* Adjusted to make it smaller */
+    padding: 10px 30px; /* Reduced padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index:99;
+    z-index: 99;
     background: #212A3E;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
+
 .logo{
     font-family: 'Poppins';
     font-size: 2em;
@@ -156,7 +219,7 @@ header{
     transform: scaleX(1);
 }
 .navigation .btnLogin-popup{
-    width: 130px;
+    width: 140px;
     height: 50px;
     background: transparent;
     border:2px solid #fff;
@@ -173,6 +236,7 @@ header{
     background: white;
     color: black ;
 }
+
 .wrapper{
     position: fixed;
     top: 0%;
@@ -190,6 +254,7 @@ header{
     align-items: center;
     overflow: hidden;
     transform: scale(0);
+    z-index: 99;
     transition:transform .5s ease, height .2s ease;
 
 }
@@ -202,7 +267,7 @@ header{
 
 .wrapper .form-box{
     width: 100%;
-    padding: 40px;
+    padding: 37px;
 }
 .wrapper .form-box.login{
     transition: transform .18s ease;
@@ -317,14 +382,86 @@ header{
 .login-register a:hover{
     text-decoration: underline;
 }
-
-section{
-    display: grid;
-    min-height: 100vh;
+section #footnotes{
+    position: absolute;
+    bottom: -300vh;
 }
 .icon-close{
     transition: transform 0.3s ease;
 }
 .icon-close:hover{
     transform: scale(1.2);
+}
+.icon-call{
+    font-size: 30px;
+    transform: scale(1.2);
+}
+#faq-section{
+    text-align: center;
+    position: absolute;
+    bottom: -270%;
+    margin: 10px;
+}
+.faq-item{
+    margin-bottom: 20px
+}
+#faq-section h2{
+    font-size: 2.3em;
+    color: #394867;
+    text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+    margin-bottom: 2s0px;
+}
+.faq-box {
+    width: auto;
+    height: auto;
+    border: 2px solid #333;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: #9DB2BF;
+    transition: transform 0.3s ease-in-out,background-color 0.3s ease-in-out;
+}
+.faq-box:hover{
+    transform: scale(1.2);
+    background-color: #526D82;
+}
+.question{
+    cursor: pointer;
+    color: #fff;
+    text-decoration:solid 2px black;
+}
+.answer{
+    display: none;
+    margin: 5px;
+    color: white;
+}
+#light{
+    height: 100px;
+    width:110px
+}
+@media screen  and (min-width:600px){
+    .logo{
+        font-size: 20px;
+        text-align: center;
+    }
+    .navigation{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    header{
+        width: 100%;
+        height: 15%;
+    }
+    .btnLogin-popup{
+        position: relative;
+        flex-direction: column-reverse;
+    }
+    .head{
+        flex-direction: column;
+    }
+    .img1{
+        flex-direction: column;
+    }
 }

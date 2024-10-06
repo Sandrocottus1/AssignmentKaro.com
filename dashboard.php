@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <h2 class="logo"><a href="login page.php">AssignmentKaro.com</a></h2>
+        <h2 class="logo"><a href="index.php">AssignmentKaro.com</a></h2>
         <nav class="navigation">
             <a href="#">HOME</a>
             <a href="#">SERVICES</a>
